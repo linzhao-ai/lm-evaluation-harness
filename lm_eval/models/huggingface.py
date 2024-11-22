@@ -694,7 +694,7 @@ class HFLM(TemplateLM):
             else:
                 assert isinstance(
                     tokenizer, transformers.PreTrainedTokenizer
-                ) or isinstance(tokenizer, transformers.PreTrainedTokenizerFast)
+                ) or isinstance(tokenizer, (transformers.PreTrainedTokenizerFast, transformers.AutoTokenizer))
                 self.tokenizer = tokenizer
         else:
             # Get tokenizer based on 'pretrained'

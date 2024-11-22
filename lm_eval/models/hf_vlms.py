@@ -117,6 +117,8 @@ class HFMultimodalLM(HFLM):
                     trust_remote_code=trust_remote_code,
                     # use_fast=use_fast_tokenizer,
                 )
+            elif isinstance(tokenizer, transformers.tokenization_utils_fast.PreTrainedTokenizerFast): # vlm tokenizer
+                self.tokenizer = tokenizer
             else:
                 assert isinstance(
                     tokenizer, transformers.ProcessorMixin
